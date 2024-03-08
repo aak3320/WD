@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Day</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-mesh-particles-component@^0.4.0/aframe-mesh-particles-component.js"></script> -->
+    <!-- <script
+        src="https://unpkg.com/aframe-particle-system-component@1.0.11/dist/aframe-particle-system-component.min.js"></script> -->
+    <script src="https://cdn.8thwall.com/web/aframe/aframe-particle-system-component-1.1.4.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <a-asset-item><video id="video1" src="./video1.mp4" crossorigin="anonymous"></video>
+                <!-- <audio id="sound1" src="Sound.mp3"></audio> -->
+            </a-asset-item>
+            <img id="sky" src="./Background.png">
+            <img id="1" src="./1.jpg" crossorigin="anonymous">
+            <img id="2" src="./2.jpg" crossorigin="anonymous">
+            <img id="3" src="./3.jpg" crossorigin="anonymous">
+            <img id="4" src="./4.jpg" crossorigin="anonymous">
+            <img id="5" src="./5.jpg" crossorigin="anonymous">
+            <img id="planetexture" src="./planetexture.png">
+            <img id="planetexture1" src="./planetexture1.jpg">
+            <img id="planetexture2" src="./planetexture2.jpg">
+            <img id="planetexture3" src="./planetexture3.jpg">
+            <img id="planetexture4" src="./planetexture4.jpg">
+            <img id="play1" src="./play.png">
+            <img id="play2" src="./play.png">
+            <img id="start1" src="./start.png">
+            <a-asset-item id="book" src="./book1.glb"></a-asset-item>
+        </a-assets>
+        <a-light type="ambient" position="3.4 2 -5"></a-light>
+        <a-camera raycaster="objects: .clickable" cursor="rayOrigin:mouse" wasd-controls="enabled:false" rotation="0 0 0"
+            position="-3.8 2 0"></a-camera>
+        <a-sky src="#sky" 
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 360000; easing: linear"></a-sky>
+        <!-- <a-plane id="FloorHologram" geometry="primitive: cylinder; height: 0.4; radius: 19.2" position="0 -5.75 0"
+            rotation="0 0 0"
+            material="src: #ceiling; repeat: 12 12; blending: additive; shader: standard;"></a-plane> -->
+        <a-entity geometry="primitive:plane; height:6; width:4" material=" src:#planetexture; opacity:1"
+            position="-3.8 2 -6" rotation="0 0 0"></a-entity>
+        <!-- <a-image src="#play" position="0.3 -1.6 0" scale="1 1 1"></a-image>
+        <a-entity id="memory" class="clickable" position="-4 2.03 -5">
+            <a-image class="clickable" src="#play" position="0.3 -1.6 0"
+                scale="2 2 2"></a-image>
+        </a-entity> -->
+        <a-entity id="button1" class="clickable" position="6.8 -2 -6" rotation="0 -45 0">
+            <a-plane class="clickable" geometry="primitive:circle" material="opacity:0.9;src:#play1"
+                position="-0.1 -1.8 0" scale="1.7 1.5 1.7"></a-plane>
+            <a-image class="clickable" src="#start1" scale="3.2 3.2 3.2" position="-0.2 -1.6 0.5" opacity="0.5"></a-image>
+        </a-entity>
+        <a-entity id="box1" geometry="primitive:box; height:7; width:6"
+            material="opacity:0.8; src:#planetexture1; blending: additive; transparent: true;"
+            position="4.8 2 -5" rotation="0 135 0"></a-entity>
+        <a-entity id="f1" geometry="primitive:plane; height:4.2;width:3.8" material="opacity:0;src:#1"
+            position="1.9 2 -3.2" rotation="0 -45 0" scale="0 0 0"></a-entity>
+        <a-entity id="button2" class="clickable" position="5 0 7" rotation="0 -105 0">
+            <a-plane class="clickable" geometry="primitive:circle" material="opacity:0.9;src:#play2;side:double;"
+                position="-1 -2.8 0" scale="1.7 1.5 1.5"></a-plane>
+                <a-image class="clickable" src="#start1" scale="3.4 3 3" position="-1.1 -2.6 0.5" opacity="0.5"></a-image>
+        </a-entity>
+        <a-entity id="box2" geometry="primitive:box; height:8; width:14"
+            material="opacity:0.8; src:#planetexture2; repeat: 4 5; blending: additive; transparent: true;"
+            position="8 2 7.5" rotation="0 75 0"></a-entity>
+        <a-entity id="f2" geometry="primitive:plane; height:5.5; width:10.4; "
+            material="side:double; opacity:0; src:#video1" position="5 -2 6" rotation="90 75 180"
+            scale="1 1 1"></a-entity>
+        <a-entity id="pt"  geometry="primitive:box; height:3.5; width:4.5"
+        material="src:#planetexture3; opacity:0.5;transparent: true;" position="-8 2.1 17" scale="2.6 2.6 2.6"
+            rotation="0 160 -1">
+        </a-entity>
+        <a-entity>
+           <a-text id="f3" text="value:Happy Women's Day Bhavya \n\nToday, as we celebrate the remarkable strength and achievements of women everywhere.\nMay your future as bright as your spirit and as limitless as your potential.Keep shining, because you are the strongest, and you can conquer anything! Maybe this is last time I am able to wish you, so All The Best to You!!!\n\n From:Aakash;align:center;  color:#000080;height:40; width:14; z-offset:1.6;anchor:center ; baseline:top"
+            position="-7.4 4.5 15"
+            rotation="0 160 -1" 
+            scale="0.57 0.7 0.7"
+            opacity="0"
+            font="./font.json" negate="false"  font-image="./font.png" shader="msdf"
+            ></a-text>
+            <!-- <a-text id="f4" text="value:From:;wrapCount:18;align:center;  color:#000080;height:40; width:12; z-offset:1.6;anchor:center ; baseline:top"
+            position="-9.2 -0.5 15"
+            rotation="0 165 1" 
+            scale="0.5 0.5 0.5"
+            opacity="0"
+            font="./font.json" negate="false"  font-image="./font.png" shader="msdf"
+            ></a-text>
+            <a-text id="f5" text="value:Name;wrapCount:18;align:center;  color:#000080;height:40; width:12; z-offset:1.6;anchor:center ; baseline:top"
+            position="-11.4 -0.6 15"
+            rotation="0 165 1" 
+            scale="0.5 0.5 0.5"
+            opacity="0"
+            font="./font.json" negate="false"  font-image="./font.png" shader="msdf"
+            ></a-text> -->
+        </a-entity>
+        <a-entity id="button3" class="clickable" position="-6.7 -1 13" rotation="0 -185 0">
+            <a-plane class="clickable"  material="opacity:0.9;src:./chocolate.png;side:double;"
+                position="0.3 -2.3 0" scale="3 3 3" rotation="0 0 0"></a-plane>
+                <a-image class="clickable" src="#start1" scale="3.8 3.4 3.8" position="0.3 -2.5 0.3" opacity="0.5"></a-image>
+        </a-entity>
+
+        <a-entity id="box5" geometry="primitive:box; height:6; width:9"
+            material="src:#planetexture4; opacity:1;transparent: true;" position="-15 2.1 0"
+            rotation="5 -90 0"></a-entity>
+        <a-entity id="text4" position="-11 -0.3 -1.3" rotation="5 90 0">
+            <a-text id="text5" font="./font.json" negate="false"  font-image="./font.png" shader="msdf" align="center" value="Thank You" position="-1.3 2.7 0"
+                 height="10" width="10" color="red" 
+                opacity="0"></a-text>
+            <a-text id="text6" font="./font.json" negate="false"  font-image="./font.png" shader="msdf" align="center" value="Bhavya" position="-1.35 2.1 0"
+                 height="10" width="10" color="red" 
+                opacity="0"></a-text>
+        </a-entity>
+        <!-- <a-entity id="particle1" position="-17 0.4 -4.5" rotation="0 90 10"></a-entity> -->
+        <!-- <a-entity id="particle2" position="-17 0.4 4.5" rotation="0 90 -10"></a-entity> -->
+        <a-entity id="button5" class="clickable" position="-11 0.2 1" rotation="5 90 0">
+            <a-plane class="clickable" geometry="primitive:circle" material="opacity:0.9;src:#play1;side:double;"
+                position="1 -2.8 -3" scale="1.7 1.5 1.7"></a-plane>
+                <a-image class="clickable" src="#start1" scale="3.5 3 3" position="1 -2.6 -2.5" opacity="0.5"></a-image>
+        </a-entity>
+    </a-scene>
+    <script>
+        var f1 = document.getElementById('f1');
+        var f2 = document.getElementById('f2');
+        var f3 = document.getElementById('f3');
+        // var f4 = document.getElementById('f4');
+        // var f5 = document.getElementById('f5');
+        var button1 = document.getElementById('button1');
+        var button2 = document.getElementById('button2');
+        var button3 = document.getElementById('button3');
+        var button5 = document.getElementById('button5');
+        var video1 = document.getElementById('video1');
+        var pt = document.getElementById('pt');
+        var text5 = document.getElementById('text5');
+        var text6 = document.getElementById('text6');
+        // var particle1 = document.getElementById('particle1');
+        let i = 2;
+        let soundplay = false;
+        let soundplay1 = false;
+        var sound = new Howl({
+            src: ['./Sound.mp3']
+        });
+        var sound1 = new Howl({
+            src: ['./Sound1.mp3']
+        });
+        button1.addEventListener('click', function () {
+            video1.pause();
+            f1.setAttribute('animation__1', {
+                'property': 'material.opacity',
+                'dir': 'alternate',
+                'to': '1', 'dur': '5000',
+                'loop': '2'
+            });
+            f1.setAttribute('animation', {
+                'property': 'scale',
+                'to': { x: 1.01, y: 1, z: 1.2 },
+                'dur': '10000',
+                'easing': 'easeOutCirc'
+            });
+            // box1.setAttribute('animation', {
+            //     'property': 'material.offset',
+            //     'to': '0 -5.5',
+            //     'dur': '24500',
+            //     'loop': 'true'
+            // });
+            sound1.stop();
+            if(soundplay==false){
+                soundplay=true;
+                sound.play();
+            }
+        });
+        f1.addEventListener('animationcomplete__1', (e) => {
+            f1.removeAttribute('animation__1');
+            f1.setAttribute('material', `src:#${i};opacity:0`)
+            f1.setAttribute('animation__1', {
+                'property': 'material.opacity',
+                'to': '1', 'dur': '3000', 'loop': '2', 'dir': 'alternate'
+            });
+            i++;
+            if (i == 6) {
+                i = 1;
+            }
+        });
+        button2.addEventListener('click', function () {
+
+            f2.setAttribute('animation__1', {
+                'property': 'material.opacity',
+                'to': '1', 'dur': '1000'
+            });
+            f2.setAttribute('animation', {
+                'property': 'position',
+                'to': { x: 5.8, y: 1.92, z: 6.3 },
+                'dur': '1000',
+            });
+            f2.setAttribute('animation__2', {
+                'property': 'rotation',
+                'to': { x: 180, y: 75, z: 180 }, 'dur': '1000'
+            });
+            video1.play();
+            sound.stop();
+            sound1.stop();
+            box2.setAttribute('animation', {
+                'property': 'material.offset',
+                'to': '-5.5 0',
+                'dur': '24500',
+                'loop': 'true'
+            });
+        });
+        button3.addEventListener('click', (e) => {
+            sound.stop();
+            video1.pause();
+            if(soundplay1==false){
+                soundplay1=true;
+                sound1.play();
+            }
+            
+            f3.setAttribute('animation__1', {
+                'property': 'opacity',
+                'to': '1','dur': '2000'
+            });
+            // f4.setAttribute('animation__1', {
+            //     'property': 'opacity',
+            //     'to': '1','dur': '2000'
+            // });
+            // f5.setAttribute('animation__1', {
+            //     'property': 'opacity',
+            //     'to': '1','dur': '2000'
+            // });
+        });
+        button5.addEventListener('click', (e) => {
+            video1.pause();
+            text5.setAttribute('animation__1', {
+                'property': 'opacity',
+                'to': '1', 'dur': '4000'
+            });
+            text6.setAttribute('animation__1', {
+                'property': 'opacity',
+                'to': '1', 'dur': '4000'
+            });
+            // particle1.setAttribute('particle-system', 'preset:rain; particleCount:50; texture:./chocolate.png; size:8' );
+        });
+    </script>
+</body>
+</html>
